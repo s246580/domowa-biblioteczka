@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Domowa biblioteczka</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Newsreader:opsz,wght@6..72,400;6..72,600&display=swap">
+    <link rel="stylesheet" href="css/base.css">
+</head>
+<body>
+    <header class="site-header">
+        <a href="#szukaj" class="logo">Domowa biblioteczka</a>
+        <label class="theme-toggle">
+            <input type="checkbox" id="theme-toggle">
+            <span>Ciemny motyw</span>
+        </label>
+    </header>
+
+    <nav class="tabs" aria-label="Główna nawigacja">
+        <a href="#szukaj">Szukaj</a>
+        <a href="#polki">Moje półki <span id="shelf-count">(0)</span></a>
+    </nav>
+
+    <main>
+        <section id="szukaj" class="view">
+            <h1>Co dziś czytamy?</h1>
+            <form id="search-form" role="search">
+                <label for="search-input">Tytuł lub autor</label>
+                <input type="search" id="search-input" name="q" minlength="2" required>
+                <button type="submit">Szukaj</button>
+            </form>
+            <p id="search-status" aria-live="polite"></p>
+            <div id="results" class="results"></div>
+        </section>
+
+        <section id="polki" class="view">
+            <h2>Moje półki</h2>
+            <div id="shelves" class="shelves"></div>
+        </section>
+    </main>
+
+    <dialog id="finish-dialog"></dialog>
+
+    <footer class="site-footer">
+        <p>© 2026 Sonia i Gabi</p>
+    </footer>
+    
+</body>
+</html>
