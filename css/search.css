@@ -1,0 +1,76 @@
+/* Tytuł z podtytułem po lewej, formularz po prawej */
+.search-head {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: end;
+    justify-content: space-between;
+    gap: 20px 24px;
+}
+
+.lead {
+    margin: 6px 0 0;
+    color: var(--muted);
+}
+
+/* Formularz wyszukiwania */
+#search-form {
+    flex: 1 1 320px;
+    max-width: 520px;
+    display: grid;
+    gap: 8px;
+
+    & label {
+        font-size: 0.8rem;
+        font-weight: 600;
+        color: var(--primary);
+    }
+
+    & input {
+        min-height: 46px;
+        padding: 0 14px;
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        background-color: var(--surface);
+        color: var(--text);
+        transition: border-color 0.2s;
+    }
+
+    & input:focus {
+        border-color: var(--accent);
+    }
+
+    & button {
+        min-height: 46px;
+        padding: 0 24px;
+        border: none;
+        border-radius: var(--radius);
+        background-color: var(--primary);
+        color: var(--on-primary);
+        font-weight: 600;
+        cursor: pointer;
+        transition: background-color 0.2s, transform 0.15s;
+    }
+
+    & button:hover {
+        background-color: var(--accent);
+    }
+
+    & button:active {
+        transform: scale(0.95);
+    }
+
+    @media (min-width: 768px) {
+        grid-template-columns: 1fr auto;
+
+        & label {
+            grid-column: 1 / -1;
+        }
+    }
+}
+
+/* Komunikaty: ładowanie, błąd, brak wyników */
+#search-status {
+    margin: 0;
+    font-size: 0.8rem;
+    color: var(--muted);
+}
